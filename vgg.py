@@ -27,12 +27,6 @@ for emb, label in dataset_raw[850:]:
     embedding_list_test.append(emb)
     label_list_test.append(label.split('_')[1])
        
-'''    
-print('length of embedding train list: {}'.format(len(embedding_list_train)))
-print('lenght of label train list: {}'.format(len(label_list_train)))
-print('length of embedding test list: {}'.format(len(embedding_list_test)))
-print('lenght of label test list: {}'.format(len(label_list_test)))
-
 classifier = svm.SVC(gamma=1, kernel='rbf', C=40)
 classifier.fit(embedding_list_train, label_list_train)
 
